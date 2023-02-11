@@ -1,0 +1,55 @@
+﻿<Properties StartupConfiguration="{6A279625-B14E-8D88-6D15-7FA385333D20}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EntityBase.cs">
+    <Files>
+      <File FileName="Assets/Scripts/EntityBase.cs" Line="1643" Column="23" />
+      <File FileName="Assets/Scripts/MainDownCtrl.cs" Line="42" Column="1" />
+      <File FileName="Assets/Scripts/BattleRebornUICtrl.cs" Line="62" Column="25" />
+      <File FileName="Assets/Scripts/MainModuleMediator.cs" Line="163" Column="63" />
+      <File FileName="Assets/Scripts/MainUIPageChar.cs" Line="18" Column="26" />
+      <File FileName="Assets/Scripts/RoomGenerateBase.cs" Line="561" Column="13" />
+      <File FileName="Assets/Scripts/BattleLevelUICtrl.cs" Line="143" Column="28" />
+      <File FileName="Assets/Scripts/WindowID.cs" Line="15" Column="2" />
+      <File FileName="Assets/Scripts/PauseUICtrl.cs" Line="57" Column="28" />
+      <File FileName="Assets/Scripts/UIResourceDefine.cs" Line="141" Column="2" />
+      <File FileName="Assets/Scripts/ApplicationEvent.cs" Line="82" Column="11" />
+      <File FileName="Assets/Scripts/EventWindowCtrl.cs" Line="7" Column="12" />
+      <File FileName="Assets/Scripts/GameTurnTableUICtrl.cs" Line="64" Column="4" />
+      <File FileName="Assets/Scripts/MainUIPageBattleCtrl.cs" Line="139" Column="22" />
+      <File FileName="Assets/Scripts/PureMVC/Interfaces/INotifier.cs" Line="6" Column="4" />
+      <File FileName="Assets/Scripts/WindowUI.cs" Line="180" Column="21" />
+      <File FileName="Assets/Scripts/GameConfig.cs" Line="259" Column="20" />
+      <File FileName="Assets/Scripts/LayerRewardOneCtrl.cs" Line="5" Column="21" />
+      <File FileName="Assets/Scripts/TableTool/Box_ChapterBoxModel.cs" Line="50" Column="6" />
+      <File FileName="Assets/Scripts/TableTool/Drop_DropModel.cs" Line="423" Column="55" />
+      <File FileName="Assets/Scripts/PropType.cs" Line="4" Column="5" />
+      <File FileName="Assets/Scripts/GameOverLevelCtrl.cs" Line="493" Column="45" />
+      <File FileName="Assets/Scripts/GoldTextCtrl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MainUIPage4Ctrl.cs" Line="38" Column="30" />
+      <File FileName="Assets/Resources/game/map/tiled/map_good.xml" Line="165" Column="12" />
+      <File FileName="Assets/Scripts/RoomGenerateLevel.cs" Line="32" Column="6" />
+      <File FileName="Assets/Scripts/PropOneEquip.cs" Line="5" Column="35" />
+      <File FileName="Assets/Scripts/PropOneBase.cs" Line="8" Column="25" />
+      <File FileName="Assets/Scripts/EventBlackShopMediator.cs" Line="3" Column="56" />
+      <File FileName="Assets/Scripts/MediatorBase.cs" Line="4" Column="14" />
+      <File FileName="Assets/Scripts/GameTurnTableMediator.cs" Line="3" Column="55" />
+      <File FileName="Assets/Scripts/UIBase.cs" Line="20" Column="25" />
+      <File FileName="Assets/Scripts/WindowMediator.cs" Line="194" Column="4" />
+      <File FileName="Assets/Scripts/PureMVC/Patterns/Mediator.cs" Line="6" Column="33" />
+      <File FileName="Assets/Scripts/PureMVC/Patterns/Notifier.cs" Line="6" Column="32" />
+      <File FileName="Assets/Scripts/MainUIPage3.cs" Line="17" Column="26" />
+      <File FileName="Assets/Scripts/MainUIPage4.cs" Line="17" Column="26" />
+      <File FileName="Assets/Scripts/MainUIPageBattle.cs" Line="15" Column="26" />
+      <File FileName="Assets/Scripts/MainUIPageShop.cs" Line="18" Column="26" />
+      <File FileName="Assets/Scripts/ScrollRectBase.cs" Line="319" Column="14" />
+      <File FileName="Assets/Scripts/ScrollIntCtrl.cs" Line="134" Column="18" />
+      <File FileName="Assets/Scripts/GameLogic.cs" Line="57" Column="22" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
