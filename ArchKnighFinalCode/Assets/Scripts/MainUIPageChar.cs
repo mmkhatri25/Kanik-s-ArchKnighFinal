@@ -24,12 +24,12 @@ public class MainUIPageChar : UIBase
 
 	protected override void OnInit()
 	{
-  //      Debug.Log("1Char(Clone)");
-		//mView = Object.Instantiate(ResourceManager.Load<GameObject>("UIPanel/MainUI/1Char"));
-		//mView.SetParentNormal((!(child == null)) ? child.transform : mParent);
-		//ctrl = mView.GetComponentInChildren<MediatorCtrlBase>();
-		//ctrl.SetArgs(mMainScroll);
-		//ctrl.Init();
+        Debug.Log("1Char(Clone)");
+		mView = Object.Instantiate(ResourceManager.Load<GameObject>("UIPanel/MainUI/1Char"));
+		mView.SetParentNormal((!(child == null)) ? child.transform : mParent);
+		ctrl = mView.GetComponentInChildren<MediatorCtrlBase>();
+		ctrl.SetArgs(mMainScroll);
+		ctrl.Init();
 	}
 
 	protected override void OnDeInit()

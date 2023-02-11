@@ -442,13 +442,13 @@ public class GameOverLevelCtrl : GameOverModeCtrlBase
              print("AddEquipOne 000--- "+ getgold);
         }
         int count = mEquipDatas.Count;
-        //    print("AddEquipOne 000--- "+ count);
+            print("AddEquipOne 000--- "+ count);
         
-        //for (int i = 0; i < count; i++)
-        //{
-        //    print("AddEquipOne --- "+ count);
-        //    AddEquipOne(sequence, i);
-        //}
+        for (int i = 0; i < count; i++)
+        {
+            print("AddEquipOne --- "+ count);
+            AddEquipOne(sequence, i);
+        }
         sequence.AppendCallback(delegate
         {
             AnimationEnd();

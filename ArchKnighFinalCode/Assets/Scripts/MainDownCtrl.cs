@@ -28,7 +28,7 @@ public class MainDownCtrl : MonoBehaviour
 
     private ScrollRectBase mScrollRect;
 
-    private Transform bottomline;
+    public Transform bottomline;
 
     private bool bInit;
 
@@ -39,8 +39,8 @@ public class MainDownCtrl : MonoBehaviour
 
     private void Start()
     {
-        mReds[0].SetType(RedNodeType.eRedCount);
-    //    mReds[3].SetType(RedNodeType.eGreenUp);
+       // mReds[0].SetType(RedNodeType.eRedCount);
+        mReds[3].SetType(RedNodeType.eGreenUp);
     }
 
     private void init()
@@ -51,16 +51,16 @@ public class MainDownCtrl : MonoBehaviour
         }
         bInit = true;
         //@TODO BUTTON BAR BOTTOM IN MAIN GAME
-        for (int i = 2; i < 5; i++)
+        for (int i = 1; i < 5; i++)
         {
-            //if (i != 2)
-            //{
-            //    locksimage[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button/fg/Lock", i)).gameObject;
-            //    images[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button/fg/Image", i)).gameObject;
-            //    buttons[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button", i)).GetComponent<ButtonCtrl>();
-            //    locks[i] = true;
-            //}
-            //else
+            if (i != 2)
+            {
+                locksimage[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button/fg/Lock", i)).gameObject;
+                images[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button/fg/Image", i)).gameObject;
+                buttons[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button", i)).GetComponent<ButtonCtrl>();
+                locks[i] = true;
+            }
+            else
             {
                 locks[i] = false;
             }
@@ -72,13 +72,14 @@ public class MainDownCtrl : MonoBehaviour
             }
         }
         float bottomHeight = PlatformHelper.GetBottomHeight();
-        (base.transform as RectTransform).anchoredPosition = new Vector2(-115f, bottomHeight);
+        (base.transform as RectTransform).anchoredPosition = new Vector2(0f, bottomHeight);
         bottomline = base.transform.Find("Bottom");
         if ((bool)bottomline)
         {
             RectTransform rectTransform = bottomline as RectTransform;
             rectTransform.anchoredPosition = new Vector2(0f, (0f - bottomHeight) / GameLogic.WidthScaleAll);
         }
+        transform.position = new Vector3(-50f, 0,0);
     }
 
     public void SetScrollRect(ScrollRectBase scroll)
@@ -89,7 +90,7 @@ public class MainDownCtrl : MonoBehaviour
     public void UpdateUI()
     {
         bool flag = false;
-        for (int i = 2; i < 5; i++)
+        for (int i = 0; i < 5; i++)
         {
             bool flag2 = false;
             switch (i)

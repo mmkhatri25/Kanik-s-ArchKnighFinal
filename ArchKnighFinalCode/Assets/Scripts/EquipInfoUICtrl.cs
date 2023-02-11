@@ -360,6 +360,7 @@ public class EquipInfoUICtrl : MediatorCtrlBase
 
 	private void OnClickUpgrade()
 	{
+        Debug.Log("equipment count is --- "+mEquipData.Count);
 		if (!mEquipData.CountEnough)
 		{
 			CInstance<TipsUIManager>.Instance.Show(ETips.Tips_EquipMaterialNotEnough);
