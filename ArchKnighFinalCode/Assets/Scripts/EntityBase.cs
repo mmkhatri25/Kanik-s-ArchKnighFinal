@@ -1640,8 +1640,8 @@ public class EntityBase : MonoBehaviour
 
 	public bool GetIsDead()
 	{
-        if (Type == EntityType.Hero) 
-        return false;     // comment both both line in production
+        //if (Type == EntityType.Hero) 
+        //return false;     // comment both both line in production
 		if (m_EntityData != null)
 		{
 			return m_EntityData.CurrentHP <= 0;

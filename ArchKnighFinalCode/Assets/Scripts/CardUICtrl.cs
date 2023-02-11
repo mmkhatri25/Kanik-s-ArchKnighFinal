@@ -236,12 +236,20 @@ public class CardUICtrl : MediatorCtrlBase
 
 	private void OnClickUpgrade()
 	{
+        Debug.Log("Upgrade calll 1");
+        // LocalSave.Instance.Modify_ShowGold(10000);
+      //  LocalSave.Instance.Modify_Gold(-21500, true);
 		OnClickBG();
 		if (bInitOver)
 		{
 			long num = LocalSave.Instance.GetGold() - gold;
+        Debug.Log("Upgrade calll 2 --- "+ LocalSave.Instance.GetGold());
+            
+            
 			if (num < 0)
 			{
+        Debug.Log("Upgrade calll 3 --- "+ gold);
+            
 				PurchaseManager.Instance.SetOpenSource(ShopOpenSource.ETALENT);
 				WindowUI.ShowGoldBuy(CoinExchangeSource.ETALENT, -num, OnGoldBuyCallback);
 				return;

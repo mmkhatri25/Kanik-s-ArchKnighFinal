@@ -61,7 +61,7 @@ public class GoldBuyUICtrl : MediatorCtrlBase
 		mDiamondCtrl.SetCurrencyType(CurrencyType.Diamond);
 		mDiamondCtrl.UseTextRed();
 		mDiamondCtrl.SetValue((int)needdiamond);
-        Text_Content.text = "Insufficient diamonds";
+        Text_Content.text = "Insufficient Coins";
                 print("gold buy control....");
 		Button_Buy.onClick = delegate
 		{
