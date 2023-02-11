@@ -53,14 +53,14 @@ public class MainDownCtrl : MonoBehaviour
         //@TODO BUTTON BAR BOTTOM IN MAIN GAME
         for (int i = 1; i < 5; i++)
         {
-            if (i != 2)
-            {
-                locksimage[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button/fg/Lock", i)).gameObject;
-                images[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button/fg/Image", i)).gameObject;
-                buttons[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button", i)).GetComponent<ButtonCtrl>();
-                locks[i] = true;
-            }
-            else
+            //if (i != 2)
+            //{
+            //    locksimage[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button/fg/Lock", i)).gameObject;
+            //    images[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button/fg/Image", i)).gameObject;
+            //    buttons[i] = base.transform.Find(Utils.FormatString("Button_{0}/child/child/Button", i)).GetComponent<ButtonCtrl>();
+            //    locks[i] = true;
+            //}
+            //else
             {
                 locks[i] = false;
             }

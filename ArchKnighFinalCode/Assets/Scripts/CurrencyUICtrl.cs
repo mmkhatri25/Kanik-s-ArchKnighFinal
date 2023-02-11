@@ -255,6 +255,7 @@ public class CurrencyUICtrl : MediatorCtrlBase
 		mProgressCtrl.max = maxKeyCount;
 		mProgressCtrl.current = userInfo.Key;
 		mLevelCtrl.UpdateUI();
+        print("here userInfo.Show_Gold.ToString() -- "+ userInfo.Show_Gold.ToString());
 		if ((bool)Text_Gold)
 		{
 			Text_Gold.text = userInfo.Show_Gold.ToString();

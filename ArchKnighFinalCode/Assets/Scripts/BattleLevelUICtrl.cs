@@ -208,8 +208,11 @@ public class BattleLevelUICtrl : MediatorCtrlBase
         if ((bool)mGoldCtrl)
         {
             float gold = GameLogic.Hold.BattleData.GetGold();
-            //Debug.LogFormat("@LOG UpdateGold gold: {0}", gold);
+            Debug.LogFormat("@LOG UpdateGold gold: {0}", gold);
             mGoldCtrl.SetGold((long)gold);
+            LocalSave.Instance.Modify_ShowGold(1);
+            Debug.LogFormat("after UpdateGold gold: {0}", gold);
+            
         }
     }
 
