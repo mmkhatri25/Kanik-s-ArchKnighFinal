@@ -332,7 +332,7 @@ public class EquipInfoUICtrl : MediatorCtrlBase
 			if (mEquipData.IsMax)
 			{
 				Button_Upgrade.gameObject.SetActive(value: false);
-				Text_IsMax.gameObject.SetActive(value: true);
+				Text_IsMax.gameObject.SetActive(value: false);
 				mNeedCtrl.gameObject.SetActive(value: false);
 				(Button_Wear.transform.parent as RectTransform).anchoredPosition = new Vector2(0f, wearbuttonstartpos.y);
 			}
@@ -360,26 +360,33 @@ public class EquipInfoUICtrl : MediatorCtrlBase
 
 	private void OnClickUpgrade()
 	{
+        // LocalSave.Instance.Modify_Gold(1000000, true);
         Debug.Log("equipment count is --- "+mEquipData.Count);
-		if (!mEquipData.CountEnough)
-		{
-			CInstance<TipsUIManager>.Instance.Show(ETips.Tips_EquipMaterialNotEnough);
-			return;
-		}
+		//if (!mEquipData.CountEnough)
+		//{
+  //      Debug.Log("111  equipment count is --- "+mEquipData.CountEnough);
+        
+		//	CInstance<TipsUIManager>.Instance.Show(ETips.Tips_EquipMaterialNotEnough);
+		//	return;
+		//}
 		if (!mEquipData.GoldEnough)
 		{
 			long num = mEquipData.NeedGold - LocalSave.Instance.GetGold();
 			PurchaseManager.Instance.SetOpenSource(ShopOpenSource.EEQUIP_UPGRADE);
 			WindowUI.ShowGoldBuy(CoinExchangeSource.EEQUIP_UPGRADE, num, OnGoldBuyCallback);
 			diamondforcoin = (int)Formula.GetNeedDiamond(num);
+        Debug.Log("222  equipment count is --- "+mEquipData.GoldEnough);
+            
 			return;
 		}
-		if (mEquipData.RowID == 0)
-		{
-			CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
-			SdkManager.Bugly_Report("EquipInfoUICtrl", "equipdata.RowID = 0");
-			return;
-		}
+		//if (mEquipData.RowID == 0)
+		//{
+		//	CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
+		//	SdkManager.Bugly_Report("EquipInfoUICtrl", "equipdata.RowID = 0");
+  //      Debug.Log("333  equipment count is --- "+mEquipData.GoldEnough);
+			
+  //          return;
+		//}
 		CItemUpgarde itemUpgrade = new CItemUpgarde();
 		itemUpgrade.m_nTransID = LocalSave.Instance.SaveExtra.GetTransID();
 		itemUpgrade.m_nRowID = mEquipData.RowID;
