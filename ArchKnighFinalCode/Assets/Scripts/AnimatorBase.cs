@@ -18,7 +18,7 @@ public class AnimatorBase
 
     public virtual void Init(EntityBase entity)
     {
-        UnityEngine.Debug.Log("@LOG AnimatorBase.Init entity:" + entity.name);
+      //  UnityEngine.Debug.Log("@LOG AnimatorBase.Init entity:" + entity.name);
         m_Entity = entity;
         if (m_Entity.mAniCtrlBase != null)
         {

@@ -101,6 +101,8 @@ public class RoomGenerateLevel : RoomGenerateBase
 
 	protected override void OnOpenDoor()
 	{
+                //GameLogic.Release.MapCreatorCtrl.CreateOneGoods(9004, 5, 1);
+    
 		if (bossdeadecentid == base.currentRoomID)
 		{
 			return;
@@ -110,15 +112,15 @@ public class RoomGenerateLevel : RoomGenerateBase
 		{
 			return;
 		}
-		if (!bShowMysticShop)
-		{
-			if (LocalModelManager.Instance.Shop_MysticShop.RandomShop(GameLogic.Hold.BattleData.Level_CurrentStage, base.currentRoomID, roomList[base.currentRoomID].RoomType))
-			{
-				bShowMysticShop = true;
-				GameLogic.Release.MapCreatorCtrl.CreateOneGoods(9004, 5, 1);
-			}
-		}
-		else
+		//if (!bShowMysticShop)
+		//{
+		//	if (LocalModelManager.Instance.Shop_MysticShop.RandomShop(GameLogic.Hold.BattleData.Level_CurrentStage, base.currentRoomID, roomList[base.currentRoomID].RoomType))
+		//	{
+		//		bShowMysticShop = true;
+		//		GameLogic.Release.MapCreatorCtrl.CreateOneGoods(9004, 5, 1);
+		//	}
+		//}
+		//else
 		{
 			LocalModelManager.Instance.Shop_MysticShop.AddRatio(GameLogic.Hold.BattleData.Level_CurrentStage);
 		}

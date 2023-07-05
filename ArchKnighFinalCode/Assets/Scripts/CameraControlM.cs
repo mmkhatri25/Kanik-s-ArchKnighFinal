@@ -46,6 +46,7 @@ public class CameraControlM : PauseObject
 
 	private void Start()
 	{
+        Time.timeScale = 5f;
 		Instance = this;
 		m_Camera = base.transform.Find("Child/Camera").GetComponent<Camera>();
 		m_Camera.orthographicSize = 6f * ((float)GameLogic.DesignWidth / (float)GameLogic.DesignHeight) / ((float)GameLogic.Width / (float)GameLogic.Height);
@@ -55,7 +56,9 @@ public class CameraControlM : PauseObject
 		float y = GameLogic.Height;
 		Vector3 localPosition = uiCamera.transform.localPosition;
 		transform.localPosition = new Vector3(x, y, localPosition.z) * 0.5f;
-	}
+	//LocalSave.Instance.Modify_Gold(900000001, true);
+    
+    }
 
 	public void DeInit()
 	{

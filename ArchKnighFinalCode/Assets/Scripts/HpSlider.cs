@@ -85,6 +85,8 @@ public class HpSlider : MonoBehaviour
 		HP_FG_Blue = (child.transform.Find("HP_FG_Blue") as RectTransform);
 		Vector2 sizeDelta = HP_FG.sizeDelta;
 		FG_Width = sizeDelta.x;
+      
+        
 	}
 
 	private void LateUpdate()
@@ -171,11 +173,14 @@ public class HpSlider : MonoBehaviour
 		UpdateHPText();
 		UpdateShield();
 	}
-
+    public bool abc = false;
 	private void UpdateHPText()
 	{
-		if ((bool)Text_HP)
+        
+        if ((bool)Text_HP)
 		{
+             print("here is hp - "+ entity.Type + " , current hp is -"  + entity.m_EntityData.CurrentHP);
+            //entity.m_EntityData.CurrentHP = 5000;
 			Text_HP.text = entity.m_EntityData.CurrentHP.ToString();
 		}
 	}
@@ -292,8 +297,11 @@ public class HpSlider : MonoBehaviour
 		{
 			entity.OnMaxHpUpdate = (Action<long, long>)Delegate.Combine(entity.OnMaxHpUpdate, new Action<long, long>(OnMaxHPUpdate));
 			OnMaxHPUpdateInternal();
+            print("here is hp set  - "+ this.entity + " , max hp - "+ maxHP);
+            
 		}
 		UpdateHP();
+        
 	}
 
 	public void DeInit()

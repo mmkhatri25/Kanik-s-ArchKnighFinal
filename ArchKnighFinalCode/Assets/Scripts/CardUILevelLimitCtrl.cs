@@ -17,6 +17,8 @@ public class CardUILevelLimitCtrl : MonoBehaviour
 
 	public void Init(int level)
 	{
+        print("upgrade 222 " + level);
+    
 		Text_Level.text = level.ToString();
 		Text_Info1.text = GameLogic.Hold.Language.GetLanguageByTID("CardUI_UpgradeLevel1");
 		Text_Info2.text = GameLogic.Hold.Language.GetLanguageByTID("CardUI_UpgradeLevel2");

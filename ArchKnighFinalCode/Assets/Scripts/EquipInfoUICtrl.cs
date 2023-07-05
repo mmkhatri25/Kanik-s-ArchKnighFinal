@@ -362,20 +362,21 @@ public class EquipInfoUICtrl : MediatorCtrlBase
 	{
         // LocalSave.Instance.Modify_Gold(1000000, true);
         Debug.Log("equipment count is --- "+mEquipData.Count);
-		//if (!mEquipData.CountEnough)
-		//{
-  //      Debug.Log("111  equipment count is --- "+mEquipData.CountEnough);
+		if (!mEquipData.CountEnough)
+		{
+        Debug.Log("111  equipment count is --- "+mEquipData.CountEnough);
         
-		//	CInstance<TipsUIManager>.Instance.Show(ETips.Tips_EquipMaterialNotEnough);
-		//	return;
-		//}
+			CInstance<TipsUIManager>.Instance.Show(ETips.Tips_EquipMaterialNotEnough);
+			return;
+		}
 		if (!mEquipData.GoldEnough)
 		{
-			long num = mEquipData.NeedGold - LocalSave.Instance.GetGold();
-			PurchaseManager.Instance.SetOpenSource(ShopOpenSource.EEQUIP_UPGRADE);
-			WindowUI.ShowGoldBuy(CoinExchangeSource.EEQUIP_UPGRADE, num, OnGoldBuyCallback);
-			diamondforcoin = (int)Formula.GetNeedDiamond(num);
-        Debug.Log("222  equipment count is --- "+mEquipData.GoldEnough);
+        CInstance<TipsUIManager>.Instance.Show(ETips.Tips_GoldNotEnough);
+			//long num = mEquipData.NeedGold - LocalSave.Instance.GetGold();
+			//PurchaseManager.Instance.SetOpenSource(ShopOpenSource.EEQUIP_UPGRADE);
+			//WindowUI.ShowGoldBuy(CoinExchangeSource.EEQUIP_UPGRADE, num, OnGoldBuyCallback);
+			//diamondforcoin = (int)Formula.GetNeedDiamond(num);
+              Debug.Log("222  equipment count is --- "+mEquipData.GoldEnough);
             
 			return;
 		}

@@ -33,6 +33,8 @@ public class TipsUIManager : CInstance<TipsUIManager>
 
 	public void Show(string value)
 	{
+     if (value == "Network error. Please try again later")
+            return;
 		ShowInternal(value, Color.white);
 	}
 
@@ -44,6 +46,8 @@ public class TipsUIManager : CInstance<TipsUIManager>
 
 	public void Show(string value, float y)
 	{
+        if (value == "Network error. Please try again later")
+            return;
 		GameObject gameObject = GameLogic.EffectGet("Game/UI/TipsUIOne");
 		gameObject.transform.SetParent(GameNode.m_TipsUI);
 		RectTransform rectTransform = gameObject.transform as RectTransform;
@@ -87,7 +91,7 @@ public class TipsUIManager : CInstance<TipsUIManager>
 			}
 			else
 			{
-				Show(ETips.Tips_NetError);
+				//Show(ETips.Tips_NetError);
 			}
 			break;
 		default:
@@ -99,7 +103,7 @@ public class TipsUIManager : CInstance<TipsUIManager>
 			}
 			else
 			{
-				Show(ETips.Tips_NetError);
+				//Show(ETips.Tips_NetError);
 			}
 			break;
 		}

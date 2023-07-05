@@ -273,6 +273,7 @@ public class GameOverLevelCtrl : GameOverModeCtrlBase
 
     private void SendGameOver()
     {
+        print("here send game over");
         if (mEquipDatas.Count > 0)
         {
             LocalSave.Instance.mGuideData.check_diamondbox_first_open();
@@ -292,6 +293,7 @@ public class GameOverLevelCtrl : GameOverModeCtrlBase
                 id = 1,
                 count = getgold
             });
+            print("here end game - "+ GameLogic.Hold.BattleData.GetGold());
         }
         if (getexp > 0)
         {
@@ -555,10 +557,10 @@ public class GameOverLevelCtrl : GameOverModeCtrlBase
 
     private void OnClickClose()
     {
-        Debug.Log("@LOG GameOverLevelCtrl.OnClickClose");
+       // Debug.Log("@LOG GameOverLevelCtrl.OnClickClose");
         WindowUI.ShowLoading(delegate
         {
-            Debug.Log("@LOG GameOverLevelCtrl.OnClickClose");
+           // Debug.Log("@LOG GameOverLevelCtrl.OnClickClose");
             WindowUI.ShowWindow(WindowID.WindowID_Main);
             LocalSave.Instance.Modify_Gold(getgold, updateui: false);
             PlayRewards();

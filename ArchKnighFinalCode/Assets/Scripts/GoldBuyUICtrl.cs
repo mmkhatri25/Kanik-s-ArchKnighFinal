@@ -55,6 +55,7 @@ public class GoldBuyUICtrl : MediatorCtrlBase
 	{
 		IProxy proxy = Facade.Instance.RetrieveProxy("GoldBuy");
 		mTransfer = (proxy.Data as GoldBuyModuleProxy.Transfer);
+        print("Available gold - "+ LocalSave.Instance.GetUserInfo().Show_Gold +"UpdateGold - " +mTransfer.gold);
 		needdiamond = Formula.GetNeedDiamond(mTransfer.gold);
 		Text_Title.text = GameLogic.Hold.Language.GetLanguageByTID("金币不足标题");
 		Text_Content.text = GameLogic.Hold.Language.GetLanguageByTID("金币不足描述");
@@ -62,7 +63,7 @@ public class GoldBuyUICtrl : MediatorCtrlBase
 		mDiamondCtrl.UseTextRed();
 		mDiamondCtrl.SetValue((int)needdiamond);
         Text_Content.text = "Insufficient Coins";
-                print("gold buy control....");
+                print("gold buy control.... - after -- "+ LocalSave.Instance.GetUserInfo().Show_Gold);
 		Button_Buy.onClick = delegate
 		{
 			//long diamond = LocalSave.Instance.GetDiamond();

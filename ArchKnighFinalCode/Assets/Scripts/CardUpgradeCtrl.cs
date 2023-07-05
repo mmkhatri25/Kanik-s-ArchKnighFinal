@@ -15,13 +15,17 @@ public class CardUpgradeCtrl : MonoBehaviour
 
 	public void UpdateUpgrade()
 	{
+        
 		Text_UpgradeCount.text = GameLogic.Hold.Language.GetLanguageByTID("CardUI_UpgradeCount", LocalSave.Instance.Card_GetRandomCount());
+        print("upgrade 111 " + Text_UpgradeCount.text);
 		if (!LocalSave.Instance.Card_GetAllMax())
-		{
+		{ 
 			int num = LocalSave.Instance.Card_GetNeedLevel();
 			if (LocalSave.Instance.GetLevel() < num)
 			{
 				mLevelLimitCtrl.Show(value: true);
+        print("num upgrade 222 - " +num);
+                
 				mLevelLimitCtrl.Init(num);
 				Button_Upgrade.gameObject.SetActive(value: false);
 				return;

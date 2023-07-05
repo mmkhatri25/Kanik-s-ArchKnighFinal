@@ -103,7 +103,7 @@ public class ShopItemDiamondBoxNormal : ShopItemDiamondBoxBase//, AdsRequestHelp
 		}
 		if (!NetManager.IsNetConnect)
 		{
-			CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
+			//CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
 			if (LocalSave.Instance.GetTimeBoxCount(LocalSave.TimeBoxType.BoxChoose_DiamondNormal) > 0)
 			{
 				SdkManager.send_event_ad(ADSource.eDiamondNormal, "IMPRESSION", 0, 0, "FAIL", "NET_ERROR");
@@ -144,10 +144,10 @@ public class ShopItemDiamondBoxNormal : ShopItemDiamondBoxBase//, AdsRequestHelp
 			free = true;
 		}
 		List<Drop_DropModel.DropData> list = LocalModelManager.Instance.Drop_Drop.GetDiamondBoxNormal();
-        Debug.Log("@LOG ShopItemDiamondBoxNormal.send_get_box list:" + list.Count);
+       // Debug.Log("@LOG ShopItemDiamondBoxNormal.send_get_box list:" + list.Count);
         foreach (var item in list)
         {
-            UnityEngine.Debug.Log("@LOG ShopItemDiamondBoxNormal.send_get_box item.id:" + item.id + "|item.uniqueid:" + item.uniqueid);
+          //  UnityEngine.Debug.Log("@LOG ShopItemDiamondBoxNormal.send_get_box item.id:" + item.id + "|item.uniqueid:" + item.uniqueid);
         }
         //@TODO ADD Equipment Item
 #if ENABLE_NET_MANAGER
@@ -179,7 +179,7 @@ public class ShopItemDiamondBoxNormal : ShopItemDiamondBoxBase//, AdsRequestHelp
 				{
 					mTransfer.AddCount();
 				}
-                UnityEngine.Debug.Log("@LOG send_get_box equipment:" + mTransfer.data.id);
+              //  UnityEngine.Debug.Log("@LOG send_get_box equipment:" + mTransfer.data.id);
 				update_red();
                 Facade.Instance.RegisterProxy(new BoxOpenSingleProxy(mTransfer));
 				WindowUI.CloseWindow(WindowID.WindowID_BoxOpenSingle);

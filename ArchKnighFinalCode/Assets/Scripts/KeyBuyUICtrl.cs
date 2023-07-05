@@ -87,7 +87,7 @@ public class KeyBuyUICtrl : MediatorCtrlBase//, AdsRequestHelper.AdsCallback
 			{
 				if (!NetManager.IsNetConnect)
 				{
-					CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
+					//CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
 					SdkManager.send_event_ad(ADSource.eKey, "IMPRESSION", 0, 0, "FAIL", "NET_ERROR");
 				}
 				else if (LocalSave.Instance.IsAdFree())

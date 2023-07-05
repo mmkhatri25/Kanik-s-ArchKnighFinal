@@ -82,10 +82,10 @@ public class ShopItemDiamondBoxLarge : ShopItemDiamondBoxBase
 			free = true;
 		}
 		List<Drop_DropModel.DropData> list = LocalModelManager.Instance.Drop_Drop.GetDiamondBoxLarge();
-        UnityEngine.Debug.Log("@LOG ShopItemDiamondBoxLarge.send_get_box list:" + list.Count);
+      //  UnityEngine.Debug.Log("@LOG ShopItemDiamondBoxLarge.send_get_box list:" + list.Count);
         foreach(var item in list)
         {
-            UnityEngine.Debug.Log("@LOG ShopItemDiamondBoxLarge.send_get_box item.id:" + item.id + "|item.uniqueid:" + item.uniqueid);
+           // UnityEngine.Debug.Log("@LOG ShopItemDiamondBoxLarge.send_get_box item.id:" + item.id + "|item.uniqueid:" + item.uniqueid);
         }
         //@TODO ADD Equipment Item
 #if ENABLE_NET_MANAGER
@@ -118,7 +118,7 @@ public class ShopItemDiamondBoxLarge : ShopItemDiamondBoxBase
 				{
 					mTransfer.AddCount();
 				}
-                UnityEngine.Debug.Log("@LOG send_get_box equipment:" + mTransfer.data.id);
+               // UnityEngine.Debug.Log("@LOG send_get_box equipment:" + mTransfer.data.id);
 				Facade.Instance.RegisterProxy(new BoxOpenSingleProxy(mTransfer));
 				WindowUI.CloseWindow(WindowID.WindowID_BoxOpenSingle);
 				WindowUI.ShowWindow(WindowID.WindowID_BoxOpenSingle);

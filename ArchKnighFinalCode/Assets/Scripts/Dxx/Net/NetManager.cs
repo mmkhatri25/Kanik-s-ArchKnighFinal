@@ -110,21 +110,21 @@ namespace Dxx.Net
 
 		public static void SendInternal<T1>(T1 packet, SendType sendtype, Action<NetResponse> callback) where T1 : CProtocolBase
 		{
-            Debug.LogFormat("@LOG SendInternal 1 m_strUserID:{0},m_strAccessToken:{0}", packet.m_strUserID, packet.m_strAccessToken);
+           // Debug.LogFormat("@LOG SendInternal 1 m_strUserID:{0},m_strAccessToken:{0}", packet.m_strUserID, packet.m_strAccessToken);
 			HTTPSendClient hTTPSendClient = GameNode.m_Net.AddComponent<HTTPSendClient>();
 			hTTPSendClient.StartSend(packet, sendtype, callback);
 		}
 
 		public static void SendInternal<T1>(T1 packet, SendType sendtype, int count, int time, Action<NetResponse> callback) where T1 : CProtocolBase
 		{
-            Debug.LogFormat("@LOG SendInternal 2 m_strUserID:{0},m_strAccessToken:{0}", packet.m_strUserID, packet.m_strAccessToken);
+            //Debug.LogFormat("@LOG SendInternal 2 m_strUserID:{0},m_strAccessToken:{0}", packet.m_strUserID, packet.m_strAccessToken);
             HTTPSendClient hTTPSendClient = GameNode.m_Net.AddComponent<HTTPSendClient>();
 			hTTPSendClient.StartSend(packet, sendtype, count, time, callback);
 		}
 
         public static void SendInternal(NetCacheOne senddata, Action<NetResponse> callback)
         {
-            Debug.LogFormat("@LOG SendInternal 3 m_strUserID:{0},m_strAccessToken:{0}", senddata.data.m_strUserID, senddata.data.m_strAccessToken);
+          //  Debug.LogFormat("@LOG SendInternal 3 m_strUserID:{0},m_strAccessToken:{0}", senddata.data.m_strUserID, senddata.data.m_strAccessToken);
             HTTPSendClient hTTPSendClient = GameNode.m_Net.AddComponent<HTTPSendClient>();
             hTTPSendClient.StartSend(senddata, callback);
         }

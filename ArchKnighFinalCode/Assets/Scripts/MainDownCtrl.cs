@@ -39,7 +39,7 @@ public class MainDownCtrl : MonoBehaviour
 
     private void Start()
     {
-       // mReds[0].SetType(RedNodeType.eRedCount);
+        mReds[0].SetType(RedNodeType.eRedCount);
         mReds[3].SetType(RedNodeType.eGreenUp);
     }
 
@@ -201,7 +201,7 @@ public class MainDownCtrl : MonoBehaviour
 
     public void OnLanguageChange()
     {
-        texts[0].text = GameLogic.Hold.Language.GetLanguageByTID("Main_Shop");
+        //texts[0].text = GameLogic.Hold.Language.GetLanguageByTID("Main_Shop");
         texts[1].text = GameLogic.Hold.Language.GetLanguageByTID("Main_Equip");
         texts[2].text = GameLogic.Hold.Language.GetLanguageByTID("Main_Battle");
         texts[3].text = GameLogic.Hold.Language.GetLanguageByTID("Main_Talent");

@@ -330,7 +330,7 @@ public class MapCreator
 
 	private int[,] GetTileData(string tmxid)
 	{
-        Debug.Log("@LOG GetTileData tmxid:" + tmxid);
+      //  Debug.Log("@LOG GetTileData tmxid:" + tmxid);
         XmlDocument xmlDocument = new XmlDocument();
 		string tmxString = GetTmxString(MapID);
 		xmlDocument.LoadXml(tmxString);
@@ -369,7 +369,7 @@ public class MapCreator
 
 	public int GetRoomHeight(string source, string tmxid)
 	{
-        Debug.Log("@LOG GetRoomHeight tmxid:" + tmxid);
+        //Debug.Log("@LOG GetRoomHeight tmxid:" + tmxid);
         XmlDocument xmlDocument = new XmlDocument();
 		string tmxString = GetTmxString(tmxid);
 		if (string.IsNullOrEmpty(tmxString))
@@ -389,7 +389,7 @@ public class MapCreator
 		{
 			SdkManager.Bugly_Report("GetRoomHeight", Utils.FormatString("source : {0} GetTmxString try the tmxpath:[{1}] stage:{2} is error!", source, tmxid, GameLogic.Hold.BattleData.Level_CurrentStage));
 			string tmxPath = GetTmxPath(tmxid);
-            Debug.Log("@LOG GetRoomHeight tmxPath:" + tmxPath);
+           // Debug.Log("@LOG GetRoomHeight tmxPath:" + tmxPath);
 			if (mMapStrings.ContainsKey(tmxPath))
 			{
 				mMapStrings.Remove(tmxPath);
@@ -401,7 +401,7 @@ public class MapCreator
 
 	private string GetTmxPath(string tmxid)
 	{
-        Debug.Log("@LOG GetTmxPath tmxid:" + tmxid);
+        //Debug.Log("@LOG GetTmxPath tmxid:" + tmxid);
         if (tmxid == string.Empty)
 		{
 			SdkManager.Bugly_Report("MapCreator.GetTmxPath", Utils.FormatString("stage:{0} mode:{1} roomid:{2} random a empty tmxid!!!", GameLogic.Hold.BattleData.Level_CurrentStage, GameLogic.Release.Mode.GetMode().ToString(), GameLogic.Release.Mode.RoomGenerate.GetCurrentRoomID()));
@@ -438,7 +438,7 @@ public class MapCreator
 	private string GetTmxString(string tmxid)
 	{
 		string tmxPath = GetTmxPath(tmxid);
-        Debug.Log("@LOG GetTmxString tmxPath:" + tmxPath);
+      //  Debug.Log("@LOG GetTmxString tmxPath:" + tmxPath);
         string value = string.Empty;
 		if (mMapStrings.TryGetValue(tmxPath, out value))
 		{
@@ -1153,7 +1153,7 @@ public class MapCreator
 
 	private void ReadTiledMapTSX(string name)
 	{
-        Debug.Log("@LOG ReadTiledMapTSX name:" + name);
+        //Debug.Log("@LOG ReadTiledMapTSX name:" + name);
         XmlDocument xmlDocument = new XmlDocument();
 		string xml = ResourceManager.Load<TextAsset>(Utils.FormatString("Game/Map/Tiled/{0}", name)).ToString();
 		xmlDocument.LoadXml(xml);
@@ -1174,7 +1174,7 @@ public class MapCreator
 
 	private void readTileMap()
 	{
-        Debug.Log("@LOG readTileMap");
+       // Debug.Log("@LOG readTileMap");
         XmlDocument xmlDocument = new XmlDocument();
 		string tmxString = GetTmxString(MapID);
 		if (tmxString.Equals(string.Empty))
@@ -2206,7 +2206,7 @@ public class MapCreator
 
 	private void waveroom_create_good()
 	{
-        Debug.Log("@LOG waveroom_create_good");
+      //  Debug.Log("@LOG waveroom_create_good");
         waveroom_nodelist.Clear();
 		XmlDocument xmlDocument = new XmlDocument();
 		string tmxString = GetTmxString(MapID);

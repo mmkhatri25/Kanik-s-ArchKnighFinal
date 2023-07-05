@@ -107,7 +107,7 @@ public class EquipCombineUpUICtrl : MediatorCtrlBase
 		Text_Name.color = mTransfer.equip.qualityColor;
 		Text_Quality.text = mTransfer.equip.QualityString;
 		Text_Quality.color = mTransfer.equip.qualityColor;
-		UnityEngine.Debug.Log("@LOG combine up success " + mTransfer.equip.EquipID + " quality " + mTransfer.equip.Quality + " color " + mTransfer.equip.qualityColor);
+	//	UnityEngine.Debug.Log("@LOG combine up success " + mTransfer.equip.EquipID + " quality " + mTransfer.equip.Quality + " color " + mTransfer.equip.qualityColor);
 		LocalSave.EquipOne equipOne = new LocalSave.EquipOne();
 		equipOne.EquipID = mTransfer.equip.EquipID - 1;
 		equipOne.Level = mTransfer.equip.Level;

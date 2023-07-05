@@ -58,6 +58,7 @@ public class BattleRebornUICtrl : MediatorCtrlBase
 				starttime = 5f;
 				Update();
                 Text_Count.text = "Insufficient Diamonds";
+                print("Here reborn... 111");
                 //bDealed = true;
                 //CloseWindowInternal();
                 //GameLogic.Self.Reborn_DeadEnd();
@@ -87,6 +88,8 @@ public class BattleRebornUICtrl : MediatorCtrlBase
 							LocalSave.Instance.Modify_RebornCount(-1);
 						}
 						DoReborn();
+                print("Here reborn... 222");
+                        
 					}
 #if ENABLE_NET_MANAGER
 					else
@@ -105,6 +108,7 @@ public class BattleRebornUICtrl : MediatorCtrlBase
 
 	protected override void OnOpen()
 	{
+        print("Here reborn... 3333");
 		WindowUI.ShowCurrency(WindowID.WindowID_Currency);
 		GameLogic.SetPause(pause: true);
 		bDealed = false;

@@ -223,7 +223,7 @@ public class GameLogic
 	public static void PlayBattle_Main()
 	{
 		int modeLevelKey = GameConfig.GetModeLevelKey();
-        Debug.Log("@LOG GameLogic.PlayBattle_Main modeLevelKey:" + modeLevelKey);
+       // Debug.Log("@LOG GameLogic.PlayBattle_Main modeLevelKey:" + modeLevelKey);
         LocalSave.Instance.Modify_Key(-modeLevelKey);
 		Hold.Sound.PlayUI(1000003);
 		Hold.BattleData.SetMode(GameMode.eLevel, BattleSource.eWorld);

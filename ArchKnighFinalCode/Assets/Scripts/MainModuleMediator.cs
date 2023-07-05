@@ -397,10 +397,13 @@ public class MainModuleMediator : WindowMediator, IMediator, INotifier
                 break;
             case "MainUI_GetGold":
                 {
+                    Debug.Log("MainUI_GetGold111");
                     //@TODO CANNOT DECODE _003COnHandleNotification_003Ec__AnonStorey1
                     //_003COnHandleNotification_003Ec__AnonStorey1 CS_0024_003C_003E8__locals0;
                     if (bOnlyMain)
                     {
+                    Debug.Log("MainUI_GetGold222");
+                    
                         //PlayGetGold(CS_0024_003C_003E8__locals0.vo);
                         PlayGetGold(notification.Body);
                     }
@@ -410,6 +413,8 @@ public class MainModuleMediator : WindowMediator, IMediator, INotifier
                         {
                             //PlayGetGold(CS_0024_003C_003E8__locals0.vo);
                             PlayGetGold(notification.Body);
+                    Debug.Log("MainUI_GetGold222");
+                            
                         });
                     }
                     break;

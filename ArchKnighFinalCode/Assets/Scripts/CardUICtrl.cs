@@ -5,6 +5,7 @@ using GameProtocol;
 using PureMVC.Interfaces;
 using PureMVC.Patterns;
 using System.Collections.Generic;
+using System.Linq;
 using TableTool;
 using UnityEngine;
 using UnityEngine.UI;
@@ -152,20 +153,37 @@ public class CardUICtrl : MediatorCtrlBase
 		mCardList.Clear();
 		UpdateButton();
 		mPool.Collect<CardOneCtrl>();
+        LocalSave.Instance.GetCardsList().RemoveAll(s => s.CardID == 108);
+        
+        // var itemtoremove = LocalSave.Instance.GetCardsList().Where(item => item.CardID == 108).First();
+        //LocalSave.Instance.GetCardsList().Remove(itemtoremove);
 		cards = LocalSave.Instance.GetCardsList();
-		cards.Sort(Sort);
+        
+       
+        cards.RemoveAll(s => s.CardID == 108);
+         for (int i = 0; i < cards.Count; i++)
+        {
+            print("here card - "+ cards[i]);
+            
+        }
+        cards.Sort(Sort);
 		int count = cards.Count;
 		count = MathDxx.Clamp(count, 0, 16);
 		s.Kill();
 		s = DOTween.Sequence();
 		for (int i = 0; i < count; i++)
 		{
-			int index = i;
-			s.AppendCallback(delegate
-			{
-				UpdateOne(index);
-			});
-			s.AppendInterval(0.02f);
+            //if (cards[i].CardID == 108)
+            // { }
+            //else {
+            int index = i;            
+            s.AppendCallback(delegate
+            {
+                UpdateOne(index);
+            });
+            s.AppendInterval(0.02f); 
+            //}
+            
 		}
 		s.AppendCallback(delegate
 		{
@@ -185,17 +203,23 @@ public class CardUICtrl : MediatorCtrlBase
 	private void UpdateOne(int index)
 	{
 		CardOneCtrl cardOneCtrl = mPool.DeQueue<CardOneCtrl>();
+        //if (cardOneCtrl.Text_Name.text == "Time Reward")
+            //return;
 		LocalSave.CardOne carddata = cards[index];
 		cardOneCtrl.InitCard(carddata);
 		cardOneCtrl.SetButtonEnable(value: true);
 		cardOneCtrl.Event_Click = OnClickCard;
 		cardOneCtrl.gameObject.SetParentNormal(cardparent);
-		RectTransform rectTransform = cardOneCtrl.transform as RectTransform;
-		float num = 420f;
-		float x = (float)(index % 3 * 210) - num / 2f;
-		float y = (float)(-index / 3 * 210) - 105f + 420f;
-		rectTransform.anchoredPosition = new Vector2(x, y);
-		mCardList.Add(cardOneCtrl);
+       
+RectTransform rectTransform = cardOneCtrl.transform as RectTransform;
+        float num = 420f;
+        float x = (float)(index % 3 * 210) - num / 2f;
+        float y = (float)(-index / 3 * 210) - 105f + 420f;
+        rectTransform.anchoredPosition = new Vector2(x, y);
+        mCardList.Add(cardOneCtrl);
+        
+  
+        
 	}
 
 	private void UpdateButton()
@@ -237,7 +261,7 @@ public class CardUICtrl : MediatorCtrlBase
 	private void OnClickUpgrade()
 	{
         Debug.Log("Upgrade calll 1");
-        // LocalSave.Instance.Modify_ShowGold(10000);
+        //LocalSave.Instance.Modify_ShowGold(10000);
        // LocalSave.Instance.Modify_Gold(1700, true);
 		OnClickBG();
 		if (bInitOver)
@@ -248,17 +272,24 @@ public class CardUICtrl : MediatorCtrlBase
         Debug.Log("Upgrade calll 2 --- "+ LocalSave.Instance.GetGold());
             
             
-			if (num < gold)
-			{
-        Debug.Log("Upgrade calll 3 --- "+ gold + "numb -- "+ num);
+			//if (num < gold)
+			//{
+   //     Debug.Log("Upgrade calll 3 --- "+ gold + "numb -- "+ num);
             
-				PurchaseManager.Instance.SetOpenSource(ShopOpenSource.ETALENT);
-				WindowUI.ShowGoldBuy(CoinExchangeSource.ETALENT, -num, OnGoldBuyCallback);
-				return;
-			}
+			//	PurchaseManager.Instance.SetOpenSource(ShopOpenSource.ETALENT);
+			//	WindowUI.ShowGoldBuy(CoinExchangeSource.ETALENT, -num, OnGoldBuyCallback);
+			//	return;
+			//}
 			GameLogic.Hold.Guide.mCard.CurrentOver(1);
 			WindowUI.ShowMask(value: true);
 			Drop_DropModel.DropData drop = LocalSave.Instance.Card_GetRandomOnly();
+            if(drop.id == 108)
+            {
+            Debug.Log("drop.id - "+drop.id);
+             drop = LocalSave.Instance.Card_GetRandomOnly();
+
+            }
+
 			currentrandomid = drop.id;
 			CReqObtainTreasure cReqObtainTreasure = new CReqObtainTreasure();
 			cReqObtainTreasure.m_nTransID = LocalSave.Instance.SaveExtra.GetTransID();

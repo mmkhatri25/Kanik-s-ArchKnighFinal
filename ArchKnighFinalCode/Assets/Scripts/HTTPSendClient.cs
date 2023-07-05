@@ -220,13 +220,13 @@ public class HTTPSendClient : MonoBehaviour
 
     private IEnumerator sendInternal(NetCacheOne senddata, int index, Action<NetResponse> callback)
     {
-        Debug.Log("@LOG HTTPSendClient.sendInternal");
+       // Debug.Log("@LOG HTTPSendClient.sendInternal");
         if (!NetManager.IsNetConnect)
         {
             Debug.Log("无网络 " + senddata.sendcode + " cache " + IsCache);
             if (IsForce)
             {
-                CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
+                //CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
             }
             callback?.Invoke(new NetResponse());
             CacheError(senddata, reduce_count: false);
@@ -243,7 +243,7 @@ public class HTTPSendClient : MonoBehaviour
         {
             if (IsForce)
             {
-                CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
+                //CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
             }
             callback?.Invoke(new NetResponse());
             CacheError(senddata, reduce_count: true);

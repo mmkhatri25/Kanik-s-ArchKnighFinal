@@ -238,7 +238,7 @@ public class ButtonCtrl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
 			}
 			else
 			{
-				CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
+				//CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
 			}
 		}
 		else

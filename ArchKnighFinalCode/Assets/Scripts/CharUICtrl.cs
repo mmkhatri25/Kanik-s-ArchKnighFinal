@@ -225,7 +225,7 @@ public class CharUICtrl : MediatorCtrlBase
 		for (int count2 = haveEquips.Count; j < count2; j++)
 		{
 			LocalSave.EquipOne equipOne = haveEquips[j];
-            Debug.Log("@LOG CharUICtrl.UpdateEquipsList EquipID:" + equipOne.EquipID);
+          //  Debug.Log("@LOG CharUICtrl.UpdateEquipsList EquipID:" + equipOne.EquipID);
 			if (equipOne.WearIndex >= 0)
 			{
 				mEquipBGList[equipOne.WearIndex].Init(equipOne);

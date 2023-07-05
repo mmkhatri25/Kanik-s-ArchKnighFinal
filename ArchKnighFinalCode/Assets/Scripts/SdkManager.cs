@@ -39,7 +39,7 @@ public class SdkManager
 
 	private static void Log(string value)
 	{
-        UnityEngine.Debug.Log(Utils.FormatString("ShuShu TGAnalysis : {0}", value));
+      //  UnityEngine.Debug.Log(Utils.FormatString("ShuShu TGAnalysis : {0}", value));
     }
 
     public static void InitSdks()

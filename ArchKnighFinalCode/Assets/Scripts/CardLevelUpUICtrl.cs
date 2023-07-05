@@ -58,6 +58,15 @@ public class CardLevelUpUICtrl : MediatorCtrlBase
 		{
 			onEventClose = proxy.Event_Para0;
 			mData = (proxy.Data as LocalSave.CardOne);
+            print("before mdata here - "+ mData.CardID);
+            if (mData.CardID == 108)
+            {
+                print("mData.CardID here  - " + mData.CardID);
+            mData.CardID = 103;
+                
+            }
+            print("after mdata here - "+ mData.CardID);
+            
 			Text_CardName.text = GameLogic.Hold.Language.GetLanguageByTID(Utils.FormatString("宝物名称{0}", mData.CardID));
 			Text_CardName.transform.localPosition = Vector3.zero;
 			mCloseCtrl.OnClose = OnClickClose;
@@ -87,6 +96,14 @@ public class CardLevelUpUICtrl : MediatorCtrlBase
 
 	private void UpdateUI()
 	{
+    print("before mdata here - "+ mData.CardID);
+            if (mData.CardID == 108)
+            {
+                print("mData.CardID here  - " + mData.CardID);
+            mData.CardID = 103;
+                
+            }
+            print("after mdata here - "+ mData.CardID);
 		mCloseCtrl.Show(value: false);
 		for (int i = 0; i < mAttList.Count; i++)
 		{
@@ -110,6 +127,14 @@ public class CardLevelUpUICtrl : MediatorCtrlBase
 
 	private Sequence UpdateAttribute()
 	{
+    print("before mdata here - "+ mData.CardID);
+            if (mData.CardID == 108)
+            {
+                print("mData.CardID here  - " + mData.CardID);
+            mData.CardID = 103;
+                
+            }
+            print("after mdata here - "+ mData.CardID);
 		Sequence sequence = DOTween.Sequence();
 		if (mData.level == 1)
 		{
@@ -148,6 +173,14 @@ public class CardLevelUpUICtrl : MediatorCtrlBase
 
 	private CardLevelUpAttCtrl GetAttOne(int index)
 	{
+    print("before mdata here - "+ mData.CardID);
+            if (mData.CardID == 108)
+            {
+                print("mData.CardID here  - " + mData.CardID);
+            mData.CardID = 103;
+                
+            }
+            print("after mdata here - "+ mData.CardID);
 		if (mAttList.Count > index)
 		{
 			mAttList[index].gameObject.SetActive(value: true);
@@ -164,6 +197,14 @@ public class CardLevelUpUICtrl : MediatorCtrlBase
 
 	private CardLevelUpAtt2Ctrl GetAtt2One(int index)
 	{
+    print("before mdata here - "+ mData.CardID);
+            if (mData.CardID == 108)
+            {
+                print("mData.CardID here  - " + mData.CardID);
+            mData.CardID = 103;
+                
+            }
+            print("after mdata here - "+ mData.CardID);
 		if (mAtt2List.Count > index)
 		{
 			mAtt2List[index].gameObject.SetActive(value: true);

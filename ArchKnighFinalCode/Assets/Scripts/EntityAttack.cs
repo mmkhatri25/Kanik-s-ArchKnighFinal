@@ -38,7 +38,7 @@ public class EntityAttack : EntityAttackBase
 
 	private void AttackStart()
 	{
-        Debug.Log("@LOG EntityAttack.AttackStart");
+       // Debug.Log("@LOG EntityAttack.AttackStart");
 		if (bRotate)
 		{
 			UpdateAttackAngle();

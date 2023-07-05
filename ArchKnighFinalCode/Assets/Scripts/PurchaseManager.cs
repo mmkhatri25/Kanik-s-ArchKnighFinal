@@ -487,10 +487,10 @@ public class PurchaseManager : MonoBehaviour
 
     public void OnPurchaseClicked(string productId, Action<bool, CRespInAppPurchase> callback = null)
     {
-        Debug.Log("@LOG OnPurchaseClicked productId:" + productId);
+       // Debug.Log("@LOG OnPurchaseClicked productId:" + productId);
         if (!NetManager.IsNetConnect)
         {
-            CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
+            //CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
         }
         else if (m_PurchaseInProgress)
         {

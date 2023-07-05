@@ -99,7 +99,7 @@ public class MainUIPageBattleCtrl : MediatorCtrlBase
 			}
 			else
 			{
-				CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
+				//CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
 			}
 		};
 		Button_ModeTest.onClick = delegate
@@ -165,7 +165,7 @@ public class MainUIPageBattleCtrl : MediatorCtrlBase
 
 	private void InitUI()
 	{
-        Debug.Log("@LOG MainUIPageBattleCtrl.InitUI");
+      //  Debug.Log("@LOG MainUIPageBattleCtrl.InitUI");
 
        // mKeyCtrl.SetValue(GameConfig.GetModeLevelKey());
 		LocalSave instance = LocalSave.Instance;
@@ -202,7 +202,7 @@ public class MainUIPageBattleCtrl : MediatorCtrlBase
 
 	private void OnClickPlay()
 	{
-     Debug.Log("button clicked111");
+   //  Debug.Log("button clicked111");
 		int modeLevelKey = GameConfig.GetModeLevelKey();
         //@TODO OnClickPlay
   //      Debug.Log("@LOG MainUIPageBattleCtrl.OnClickPlay modeLevelKey:" + modeLevelKey);
@@ -221,7 +221,7 @@ public class MainUIPageBattleCtrl : MediatorCtrlBase
 		//}
 		//else
 		//{
-     Debug.Log("button clicked444");
+    // Debug.Log("button clicked444");
         
             Facade.Instance.SendNotification("UseCurrencyKey");
 			WindowUI.ShowMask(value: true);
@@ -229,7 +229,7 @@ public class MainUIPageBattleCtrl : MediatorCtrlBase
 			{
 				WindowUI.ShowMask(value: false);
 				PlayInternal();
-     Debug.Log("button clicked555");
+   //  Debug.Log("button clicked555");
                 
 			});
 		//}

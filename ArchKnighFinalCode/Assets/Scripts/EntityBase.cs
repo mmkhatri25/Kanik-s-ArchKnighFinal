@@ -757,7 +757,7 @@ public class EntityBase : MonoBehaviour
 
 	public void Init(int id)
 	{
-        Debug.Log("@LOG EntityBase.Init id:" + id);
+       // Debug.Log("@LOG EntityBase.Init id:" + id);
         ClassID = id;
         m_Data = LocalModelManager.Instance.Character_Char.GetBeanById(ClassID);
         UpdateName();
@@ -964,11 +964,11 @@ public class EntityBase : MonoBehaviour
 
 	public void PlayAttack()
 	{
-        Debug.Log("@LOG EntityBase.PlayAttack");
+      //  Debug.Log("@LOG EntityBase.PlayAttack");
 		m_AniCtrl.SendEvent("AttackEnd");
 		if (m_Weapon != null)
 		{
-            Debug.Log("@LOG EntityBase.PlayAttack 2");
+         //   Debug.Log("@LOG EntityBase.PlayAttack 2");
             m_Weapon.Attack();
         }
 	}
@@ -1589,7 +1589,13 @@ public class EntityBase : MonoBehaviour
 
 	public void ChangeHPMust(EntityBase entity, long HP)
 	{
-		long num = m_EntityData.ChangeHP(entity, HP);
+ //if (Type == EntityType.Hero)
+            //return;
+        long num;
+    
+		 num = m_EntityData.ChangeHP(entity, HP);
+       
+             //num = m_EntityData.ChangeHP(entity, 5000);
 		if (Type == EntityType.Boss)
 		{
 			GameLogic.Hold.BattleData.BossChangeHP(num);

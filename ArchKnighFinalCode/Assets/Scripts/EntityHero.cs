@@ -125,6 +125,8 @@ public class EntityHero : EntityBase
 		Coin_Absorb = base.transform.Find("Coin_Absorb");
 		m_AttackCtrl.SetRotate(0f);
 		OnLevelUp = (Action<int>)Delegate.Combine(OnLevelUp, new Action<int>(OnLevelUpEvent));
+        //m_EntityData.CurrentHP = 10000;
+        //print(m_EntityData.GetType() +" ,  Here we are setting hp - "+ m_EntityData.CurrentHP);
 	}
 
 	protected override void StartInit()
@@ -652,7 +654,8 @@ public class EntityHero : EntityBase
 		}
 		GameLogic.Release.Game.JoyEnable(enable: true);
 		GameLogic.Hold.Sound.PlayWalk();
-		m_EntityData.ChangeHP(null, m_EntityData.MaxHP);
+        m_EntityData.ChangeHP(null, m_EntityData.MaxHP);
+		//m_EntityData.ChangeHP(null, 5000);
 		m_AniCtrl.Reborn();
 		m_MoveCtrl.OnMoveEnd();
 		m_AttackCtrl.Reset();

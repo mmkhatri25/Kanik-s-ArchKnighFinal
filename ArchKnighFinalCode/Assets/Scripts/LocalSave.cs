@@ -876,8 +876,8 @@ public class LocalSave
 		[JsonIgnore]
 		public string NeedMatUniqueID => Instance.GetPropByID(data.UpgradeNeed)?.UniqueID;
 
-		[JsonIgnore]
-		public int HaveMatCount => Instance.GetPropByID(data.UpgradeNeed)?.Count ?? 0;
+        [JsonIgnore]
+        public int HaveMatCount => Instance.GetPropByID(data.UpgradeNeed)?.Count ?? 0;
 
 		[JsonIgnore]
 		public int BreakNeed => data.BreakNeed;
@@ -2044,6 +2044,8 @@ public class LocalSave
 		public int GetNeedLevel()
 		{
 			Skill_slotoutcost beanById = LocalModelManager.Instance.Skill_slotoutcost.GetBeanById(fakerid);
+            Debug.Log("beanById - " +beanById);
+            
 			return beanById.NeedLevel;
 		}
 	}
@@ -3699,7 +3701,7 @@ public class LocalSave
 
 	public void BattleIn_Restore()
 	{
-        Debug.Log("@LOG BattleIn_Restore");
+       // Debug.Log("@LOG BattleIn_Restore");
         if (mBattleIn == null || !BattleIn_GetIn())
 		{
 			return;

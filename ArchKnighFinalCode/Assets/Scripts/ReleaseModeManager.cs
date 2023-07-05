@@ -81,7 +81,7 @@ public class ReleaseModeManager
 
 	private void SwitchMode()
 	{
-        Debug.Log("@LOG SwitchMode");
+      //  Debug.Log("@LOG SwitchMode");
         if (GameLogic.Hold.Guide.GetNeedGuide())
 		{
 			_RoomGenerate = new RoomGenerateLevelGuide();
@@ -150,7 +150,7 @@ public class ReleaseModeManager
 
 	private void CreatePlayer()
 	{
-        Debug.Log("@LOG CreatePlayer");
+       // Debug.Log("@LOG CreatePlayer");
 		GameObject gameObject = UnityEngine.Object.Instantiate(ResourceManager.Load<GameObject>("Game/Player/PlayerNode"));
         gameObject.transform.parent = GameNode.m_Battle.transform;
 		int id = 1001;
@@ -164,7 +164,7 @@ public class ReleaseModeManager
 
     private void CreateJoy()
 	{
-        Debug.Log("@LOG CreateJoy");
+      //  Debug.Log("@LOG CreateJoy");
         MoveJoy = UnityEngine.Object.Instantiate(ResourceManager.Load<GameObject>("Game/UI/MoveJoy"));
 		MoveJoy.transform.SetParent(GameNode.m_Joy);
 		MoveJoy.transform.localPosition = Vector3.zero;
@@ -174,7 +174,7 @@ public class ReleaseModeManager
 
 	private void startdrop()
 	{
-        Debug.Log("@LOG startdrop");
+        //Debug.Log("@LOG startdrop");
         HeroDropCtrl heroDropCtrl = new HeroDropCtrl();
 		heroDropCtrl.Init();
 		heroDropCtrl.StartDrop();

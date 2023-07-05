@@ -90,7 +90,7 @@ public class EquipOneCtrl : MonoBehaviour
             Image_Type.sprite = typeIcon;
         }
 
-        Debug.Log("@LOG EquipOneCtrl.Init:" + equipdata.PropType);
+        //Debug.Log("@LOG EquipOneCtrl.Init:" + equipdata.PropType);
         switch (equipdata.PropType)
         {
             case EquipType.eEquip:

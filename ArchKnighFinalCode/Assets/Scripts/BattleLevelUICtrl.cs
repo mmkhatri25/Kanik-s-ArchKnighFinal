@@ -59,7 +59,7 @@ public class BattleLevelUICtrl : MediatorCtrlBase
 
     private void InitUI()
     {
-        Debug.Log("@LOG BattleLevelUICtrl.InitUI");
+       // Debug.Log("@LOG BattleLevelUICtrl.InitUI");
         mAchieveCtrl.Show(value: false);
         mGoldCtrl.gameObject.SetActive(value: true);
         WindowUI.CloseCurrency();
@@ -205,16 +205,25 @@ public class BattleLevelUICtrl : MediatorCtrlBase
 
     private void UpdateGold()
     {
-        if ((bool)mGoldCtrl)
+     if ((bool)mGoldCtrl)
         {
             float gold = GameLogic.Hold.BattleData.GetGold();
-            Debug.Log("@LOG UpdateGold gold: {0}"+gold);
+            Debug.Log("UpdateGold gold: "+ gold);
             mGoldCtrl.SetGold((long)gold);
-            //LocalSave.Instance.Modify_ShowGold(1);
-            LocalSave.Instance.Modify_Gold(1, true);
-            Debug.Log("after UpdateGold gold: {0}"+ gold);
-            
         }
+       // if ((bool)mGoldCtrl)
+       // {
+       //     float gold = GameLogic.Hold.BattleData.GetGold();
+       //     Debug.Log("UpdateGold gold: {0}"+gold);
+       //     mGoldCtrl.SetGold((long)gold);
+       //     //LocalSave.Instance.Modify_ShowGold(1);
+       //     LocalSave.Instance.Modify_Gold(1, true);
+       // LocalSave.UserInfo userInfo = LocalSave.Instance.GetUserInfo();
+            
+       //// print("here at update coins -- "+ userInfo.Show_Gold.ToString());
+           
+            
+        //}
     }
 
     //@TODO CANNOT DECODE _003C_003Ef__switch_0024map7

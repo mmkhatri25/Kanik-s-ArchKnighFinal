@@ -110,8 +110,8 @@ public class EquipBGCtrl : MonoBehaviour
 		}
 		else
 		{
-            Debug.Log("@LOG EquipBGCtrl.Init name:" + name);
-            Debug.Log("@LOG EquipBGCtrl.Init EquipID:" + equipdata.EquipID);
+          //  Debug.Log("@LOG EquipBGCtrl.Init name:" + name);
+           // Debug.Log("@LOG EquipBGCtrl.Init EquipID:" + equipdata.EquipID);
             ctrl.gameObject.SetActive(value: true);
 			ctrl.Init(equipdata);
 			ctrl.SetButtonEnable(value: false);

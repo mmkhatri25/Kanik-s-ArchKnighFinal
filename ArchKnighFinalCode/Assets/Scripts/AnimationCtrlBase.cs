@@ -302,7 +302,7 @@ public class AnimationCtrlBase
 
 	public void OnStart()
 	{
-        UnityEngine.Debug.Log("@LOG AnimationCtrlBase.OnStart entity:" + m_Entity);
+       // UnityEngine.Debug.Log("@LOG AnimationCtrlBase.OnStart entity:" + m_Entity);
         CurrentState = mAniStringList["Idle"];
 		mAniStringList["Idle"].eventCmd = Event_Idle;
 		mAniStringList["Run"].eventCmd = Event_Run;
@@ -332,7 +332,7 @@ public class AnimationCtrlBase
 			enumerator.Current.Value.Init();
 		}
 		bInit = true;
-        UnityEngine.Debug.Log("@LOG AnimationCtrlBase.OnStart 1");
+       // UnityEngine.Debug.Log("@LOG AnimationCtrlBase.OnStart 1");
     }
 
     public void DeInit()
@@ -394,7 +394,7 @@ public class AnimationCtrlBase
         }
         catch(Exception ex)
         {
-            Debug.LogError("@LOG GetAnimationTime Exception ex:" + ex);
+          //  Debug.LogError("@LOG GetAnimationTime Exception ex:" + ex);
             return 1f;
         }
 	}

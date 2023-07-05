@@ -192,7 +192,7 @@ public class MoveControl
 
 	private void OnMoveEnd(JoyData data)
 	{
-        Debug.Log("@LOG OnMoveEnd data.name:" + data.name);
+       // Debug.Log("@LOG OnMoveEnd data.name:" + data.name);
         if (!m_Entity.GetIsDead() && data.name == "MoveJoy")
 		{
 			bTouchMove = false;

@@ -81,7 +81,7 @@ public class EquipCombineUICtrl : MediatorCtrlBase
 		};
 		Button_Combine.onClick = delegate
 		{
-            Debug.Log("@LOG EquipCombineUICtrl.Button_Combine.onClick");
+           // Debug.Log("@LOG EquipCombineUICtrl.Button_Combine.onClick");
 			EquipCombineUICtrl equipCombineUICtrl = this;
 			SdkManager.send_event_equip_combine("click", 0, string.Empty, string.Empty);
 			CEquipCompositeTrans data = new CEquipCompositeTrans();
@@ -115,13 +115,13 @@ public class EquipCombineUICtrl : MediatorCtrlBase
 				}
 				data.m_arrCompositeInfo[i] = cEquipmentItem;
 			}
-            Debug.Log("@LOG EquipCombineUICtrl.Button_Combine.onClick flag:" + flag);
+          //  Debug.Log("@LOG EquipCombineUICtrl.Button_Combine.onClick flag:" + flag);
 #if !ENABLE_NET_MANAGER
             flag = false;
 #endif
             if (flag)
             {
-				CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
+				//CInstance<TipsUIManager>.Instance.Show(ETips.Tips_NetError);
 				SdkManager.Bugly_Report("EquipCombineUICtrl", Utils.FormatString("rowid=0 : {0}", text));
 				SdkManager.send_event_equip_combine("end", 0, "fail", "rowid=0");
 			}

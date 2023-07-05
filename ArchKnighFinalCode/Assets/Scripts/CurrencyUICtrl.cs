@@ -249,16 +249,19 @@ public class CurrencyUICtrl : MediatorCtrlBase
 
 	private void UpdateCurrency()
 	{
+        //  LocalSave.Instance.UserInfo_SetGold((int)1000);
+        //LocalSave.Instance.Modify_Diamond(100, true);
 		mKeyStartTime = LocalSave.Instance.GetKeyTime();
 		LocalSave.UserInfo userInfo = LocalSave.Instance.GetUserInfo();
 		int maxKeyCount = GameConfig.GetMaxKeyCount();
 		mProgressCtrl.max = maxKeyCount;
 		mProgressCtrl.current = userInfo.Key;
 		mLevelCtrl.UpdateUI();
-        print("here userInfo.Show_Gold.ToString() -- "+ userInfo.Show_Gold.ToString());
 		if ((bool)Text_Gold)
 		{
 			Text_Gold.text = userInfo.Show_Gold.ToString();
+        print("On home Page  coins here -- "+ userInfo.Show_Gold.ToString());
+            
 		}
 		if ((bool)Text_Diamond)
 		{

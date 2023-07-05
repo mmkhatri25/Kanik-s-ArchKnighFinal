@@ -159,7 +159,7 @@ public class ShopItemDiamondBoxBase : MonoBehaviour
 
 	protected void UpdateBox()
 	{
-        Debug.Log("@LOG UpdateBox");
+       // Debug.Log("@LOG UpdateBox");
 		mStartTime = LocalSave.Instance.GetTimeBoxTime(mBoxType);
 		int timeBoxCount = LocalSave.Instance.GetTimeBoxCount(mBoxType);
 		if (timeBoxCount > 0)
